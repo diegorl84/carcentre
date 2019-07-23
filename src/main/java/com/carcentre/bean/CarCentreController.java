@@ -84,6 +84,7 @@ public class CarCentreController {
 
 			Query query = session.createQuery("FROM Mecanico WHERE estado = :estado");
 			query.setParameter("estado", status);
+			query.setMaxResults(10);
 			mecanicos = query.getResultList();
 			trx.commit();
 		} catch (HibernateException e) {
