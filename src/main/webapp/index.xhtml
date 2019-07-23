@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />     
+    <title>Lista de mecanicos</title>
+</h:head>
+<h:body>
+    <center><h2><h:outputText value="Lista de mecanicos"/></h2></center>
+    <h:form id="mecanicoForm">
+        <h:dataTable id="mecanicoTable" binding="#{table}" 
+        value="#{carCentreController.listarMecanicosByStatus('A')}" var="mecanico" >
+            <h:column>
+                <f:facet name="header">Tipo documento</f:facet>
+                <h:outputText value="#{mecanico.id.tipoDocumento}" />                
+            </h:column>
+            <h:column>
+                <f:facet name="header">Documento</f:facet>
+                <h:outputText value="#{mecanico.id.documento}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nombres</f:facet>
+                <h:outputText value="#{mecanico.primerNombre.concat(mecanico.segundoNombre)}" /> 
+            </h:column>
+            <h:column>
+                <f:facet name="header">Apellidos</f:facet>
+                <h:outputText value="#{mecanico.primerApellido.concat(mecanico.segundoApellido)}" /> 
+            </h:column>
+            <h:column>
+                <f:facet name="header">Asignar</f:facet>
+                <h:commandButton action="#{carCentreController.asignarMecanico()}" value="asignar" styleClass="btn btn-primary">
+                    <f:param name="id" value="#{mecanico.id}" />
+                </h:commandButton>
+            </h:column>
+        </h:dataTable>
+        <center><h:commandButton action="agregar-mecanico.xhtml?faces-redirect=true" value="Agregar mecanico" styleClass="btn btn-success btnSpace" /></center>
+    </h:form>
+</h:body>
+</html>

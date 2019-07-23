@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.carcentre</groupId>
+	<artifactId>car-centre-web</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>car-centre-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.3.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.47</version>
+			<scope>compile</scope>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>car-centre-web</finalName>
+
+	</build>
+	<!-- <build> -->
+	<!-- <plugins> -->
+	<!-- <plugin> -->
+	<!-- <groupId>org.codehaus.cargo</groupId> -->
+	<!-- <artifactId>cargo-maven2-plugin</artifactId> -->
+	<!-- <configuration> -->
+	<!-- <container> -->
+	<!-- <containerId>glassfish4x</containerId> -->
+	<!-- <type>installed</type> -->
+	<!-- Path to directory where glassfish is installed -->
+	<!-- <home>/Users/diego/ITProjects/glassfish4/glassfish</home> -->
+	<!-- </container> -->
+	<!-- <configuration> -->
+	<!-- <type>existing</type> -->
+	<!-- Path to domains directory -->
+	<!-- <home>/Users/diego/ITProjects/glassfish4/glassfish/domains</home> -->
+	<!-- <properties> -->
+	<!-- Domain name where application will be deployed. -->
+	<!-- <cargo.glassfish.domain.name>domain1</cargo.glassfish.domain.name> -->
+	<!-- Glassfish user to authenticate -->
+	<!-- <cargo.remote.username>admin</cargo.remote.username> -->
+	<!-- Glassfish password to authenticate -->
+	<!-- <cargo.remote.password></cargo.remote.password> -->
+	<!-- </properties> -->
+	<!-- </configuration> -->
+	<!-- </configuration> -->
+	<!-- </plugin> -->
+	<!-- </plugins> -->
+	<!-- </build> -->
+</project>

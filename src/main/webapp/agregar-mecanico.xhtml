@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<f:loadBundle basename="com.jwt.jsf.properties.messages" var="msg" />
+
+<h:head>
+	<title>Agregar mecanico</title>
+</h:head>
+<h:body>
+
+	<h2>
+		<h:outputText value="Crear Mecanico" />
+	</h2>
+
+	<h:form>
+		<div class="form-group">
+			<h:outputLabel for="tipoDocumento">Tipo documento:</h:outputLabel>
+			<h:selectOneMenu value="#{mecanicoBean.tipoDocumento}">
+				<f:selectItem itemValue="CC" itemLabel="CC" />
+				<f:selectItem itemValue="TP" itemLabel="TP" />
+				<f:selectItem itemValue="PP" itemLabel="PP" />
+			</h:selectOneMenu>
+			<h:inputText id="tipoDocumento" value="#{mecanicoBean.tipoDocumento}"></h:inputText>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="documento">Documento:</h:outputLabel>
+			<h:inputText id="documento" value="#{mecanicoBean.documento}"></h:inputText>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="primerNombre">Primer nombre:</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="primerNombre" value="#{mecanicoBean.primerNombre}"
+					required="true" requiredMessage="Campo requerido"></h:inputText>
+			</div>
+			<h:message id="m1" for="primerNombre" styleClass="text text-danger" />
+		</div>
+		<div class="form-group">
+
+			<h:outputLabel for="segundoNombre">Segundo nombre:</h:outputLabel>
+			<h:inputText id="segundoNombre" value="#{mecanicoBean.segundoNombre}"></h:inputText>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="primerApellido">Primer apellido:</h:outputLabel>
+			<h:inputText id="primerApellido"
+				value="#{mecanicoBean.primerApellido}" required="true"
+				requiredMessage="Campo requerido"></h:inputText>
+
+			<h:message id="m2" for="primerApellido" style="color:red" />
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="segundoApellido">Segundo apellido:</h:outputLabel>
+			<h:inputText id="segundoApellido"
+				value="#{mecanicoBean.segundoApellido}"></h:inputText>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="celular">Celular:</h:outputLabel>
+			<h:inputText id="celular" value="#{mecanicoBean.celular}"></h:inputText>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="direccion">Dirección:</h:outputLabel>
+			<h:inputText id="direccion" value="#{mecanicoBean.direccion}"></h:inputText>
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="email">E-mail:</h:outputLabel>
+			<h:inputText id="email" value="#{mecanicoBean.email}" required="true"
+				requiredMessage="Campo requerido">
+				<f:validator validatorId="com.carcentre.util.emailValidator" />
+			</h:inputText>
+
+			<h:message id="m3" for="email" style="color:red" />
+		</div>
+		<div class="form-group">
+			<h:outputLabel for="estado">Estado:</h:outputLabel>
+			<h:selectOneMenu value="#{mecanicoBean.estado}">
+				<f:selectItem itemValue="A" itemLabel="Disponible" />
+				<f:selectItem itemValue="U" itemLabel="No disponible" />
+			</h:selectOneMenu>
+		</div>
+		<h:commandButton value="Save"
+			action="#{carCentreController.addNewMecanico(mecanicoBean)}"
+			styleClass="btn btn-success btnWidth" />
+	</h:form>
+</h:body>
+</html>
